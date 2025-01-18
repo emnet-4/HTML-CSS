@@ -1,0 +1,230 @@
+<!doctype html>
+<html>
+<head>
+<style>
+#periodic-table
+{
+	display: grid;
+	grid-template-columns: repeat(18, 1fr);
+	grid-template-rows: repeat(7, 1fr)
+		[separator-start] 0.25fr
+		[separator-end lanthanides-start] 1fr
+		[lanthanides-end actinides-start] 1fr
+		[actinides-end];
+	grid-gap: 0.125em;
+	list-style: none;
+	padding: 0;
+	font: 1em/1 Calibri, sans-serif;
+	counter-reset: atomic-number;
+}
+
+#periodic-table li
+{
+	background: darkgrey;
+	color: black;
+	padding: 0.5em 0.125em;
+	text-align: center;
+	counter-increment: atomic-number;
+}
+
+#periodic-table li:nth-of-type(2)
+{
+	grid-column: 18;
+}
+
+#periodic-table li:nth-of-type(5),
+#periodic-table li:nth-of-type(13)
+{
+	grid-column: 13;
+}
+
+#periodic-table li:nth-of-type(n+58):nth-of-type(-n+71)
+{
+	grid-row: lanthanides;
+}
+
+#periodic-table li:nth-of-type(n+90):nth-of-type(-n+103)
+{
+	grid-row: actinides;
+}
+
+#periodic-table::before
+{
+	content: '';
+	grid-row: lanthanides / actinides;
+	grid-column: 1 / span 3;
+}
+
+@media (min-width: 60em)
+{
+	#periodic-table li::before
+	{
+		content: counter(atomic-number, decimal);
+		font-feature-settings: 'subs';
+	}
+}
+
+@media (min-width: 72em)
+{
+	#periodic-table li
+	{
+		font-size: 1.2em;
+	}
+	
+	#periodic-table li::after
+	{
+		content: attr(title);
+		display: block;
+		margin-top: 0.5em;
+		font-size: 0.5em;
+	}
+}
+
+@media (min-width: 90em)
+{
+	#periodic-table li
+	{
+		font-size: 1.5em;
+	}
+}
+body{background:url('back.png');
+     }
+h1 {
+     color: white;
+	text-align: center;
+	 }
+h2{
+color: white;
+	text-align: right;
+}
+
+</style>
+</head>
+<body>
+<h1><b><u> THE PERIODIC TABLE </u></b></h1>
+<div role="region" tabindex="0">
+	<ol id="periodic-table">
+		<li title="Hydrogen"><a href="https://en.wikipedia.org/wiki/Hydrogen#:~:text=Hydrogen%20is%20the%20lightest%20element,75%25%20of%20all%20normal%20matter.">H</a></li>
+		<li title="Helium"><a href="https://en.wikipedia.org/wiki/Helium">He</a></li>
+		<li title="Lithium"><a href="https://en.wikipedia.org/wiki/Lithium">Li</a></li>
+		<li title="Beryllium"><a href="https://en.wikipedia.org/wiki/Beryllium">Be</a></li>
+		<li title="Boron"><a href="https://en.wikipedia.org/wiki/Boron#:~:text=Boron%20is%20a%20chemical%20element,it%20is%20a%20brown%20powder.">B</a></li>
+		<li title="Carbon"><a href="https://en.wikipedia.org/wiki/Carbon">C</a></li>
+		<li title="Nitrogen"><a href="https://en.wikipedia.org/wiki/Nitrogen">N</a></li>
+		<li title="Oxygen"><a href="https://en.wikipedia.org/wiki/Oxygen">O</a></li>
+		<li title="Fluorine"><a href="https://en.wikipedia.org/wiki/Fluorine">F</a></li>
+		<li title="Neon"><a href="https://en.wikipedia.org/wiki/Neon">Ne</a></li>
+		<li title="Sodium"><a href="https://en.wikipedia.org/wiki/Sodium#:~:text=Sodium%20is%20a%20chemical%20element,must%20be%20prepared%20from%20compounds.">Na</a></li>
+		<li title="Magnesium"><a href="https://en.wikipedia.org/wiki/Magnesium">Mg</a></li>
+		<li title="Aluminium"><a href="https://en.wikipedia.org/wiki/Aluminium">Al</a></li>
+		<li title="Silicon"><a href="https://en.wikipedia.org/wiki/Silicon">Si</a></li>
+		<li title="Phosphorus"><a href="https://en.wikipedia.org/wiki/Phosphorus">P</a></li>
+		<li title="Sulfur"><a href="https://en.wikipedia.org/wiki/Sulfur">S</a></li>
+		<li title="Chlorine"><a href="https://en.wikipedia.org/wiki/Chlorine">Cl</a></li>
+		<li title="Argon"><a href="https://en.wikipedia.org/wiki/Argon">Ar</a></li>
+		<li title="Potassium"><a href="https://en.wikipedia.org/wiki/Potassium">K</a></li>
+		<li title="Calcium"><a href="https://en.wikipedia.org/wiki/Calcium">Ca</a></li>
+		<li title="Scandium"><a href="https://en.wikipedia.org/wiki/scandium">Sc</a></li>
+		<li title="Titanium"><a href="https://en.wikipedia.org/wiki/Titanium">Ti</a></li>
+		<li title="Vanadium"><a href="https://en.wikipedia.org/wiki/Vanadium">V</a></li>
+		<li title="Chromium"> <a href="https://en.wikipedia.org/wiki/Chromium">Cr</a></li>
+		<li title="Manganese"> <a href="https://en.wikipedia.org/wiki/Manganese">Mn</a></li>
+		<li title="Iron"><a href="https://en.wikipedia.org/wiki/Iron">Fe</a></li>
+		<li title="Cobalt"><a href="https://en.wikipedia.org/wiki/Cobalt">Co</a></li>
+		<li title="Nickel"><a href="https://en.wikipedia.org/wiki/Nickel">Ni</a></li>
+		<li title="Copper"><a href="https://en.wikipedia.org/wiki/Copper">Cu</a></li>
+		<li title="Zinc"><a href="https://en.wikipedia.org/wiki/Zinc">Zn</a></li>
+		<li title="Gallium"><a href="https://en.wikipedia.org/wiki/Gallium">Ga</a></li>
+		<li title="Germanium"><a href="https://en.wikipedia.org/wiki/Germanium">Ge</a></li>
+		<li title="Arsenic"><a href="https://en.wikipedia.org/wiki/Arsenic">As</a></li>
+		<li title="Selenium"><a href="https://en.wikipedia.org/wiki/Selenium">Se</a></li>
+		<li title="Bromine"><a href="https://en.wikipedia.org/wiki/Bromine">Br</a></li>
+		<li title="Krypton"><a href="https://en.wikipedia.org/wiki/Krypton">Kr</a></li>
+		<li title="Rubidium"><a href="https://en.wikipedia.org/wiki/Rubidium">Rb</a></li>
+		<li title="Strontium"><a href="https://en.wikipedia.org/wiki/Strontium">Sr</a></li>
+		<li title="Yttrium"><a href="https://en.wikipedia.org/wiki/Yttrium">Y</a></li>
+		<li title="Zirconium"><a href="https://en.wikipedia.org/wiki/Zirconium">Zr</a></li>
+		<li title="Niobium"><a href="https://en.wikipedia.org/wiki/Niobium">Nb</a></li>
+		<li title="Molybdenum"><a href="https://en.wikipedia.org/wiki/Molybdenum">Mo</a></li>
+		<li title="Technetium"><a href="https://en.wikipedia.org/wiki/Technetium">Tc</a></li>
+		<li title="Ruthenium"><a href="https://en.wikipedia.org/wiki/Ruthenium">Ru</a></li>
+		<li title="Rhodium"><a href="https://en.wikipedia.org/wiki/Rhodium">Rh</a></li>
+		<li title="Palladium"><a href="https://en.wikipedia.org/wiki/Palladium">Pd</a></li>
+		<li title="Silver"><a href="https://en.wikipedia.org/wiki/Silver">Ag</a></li>
+		<li title="Cadmium"><a href="https://en.wikipedia.org/wiki/Cadmium">Cd</a></li>
+		<li title="Indium"><a href="https://en.wikipedia.org/wiki/Indium">In</a></li>
+		<li title="Tin"><a href="https://en.wikipedia.org/wiki/Tin">Sn</a></li>
+		<li title="Antimony"><a href="https://en.wikipedia.org/wiki/Antimony">Sb</a></li>
+		<li title="Tellurium"><a href="https://en.wikipedia.org/wiki/Tellurium">Te</a></li>
+		<li title="Iodine"><a href="https://en.wikipedia.org/wiki/Iodine">I</a></li>
+		<li title="Xenon"><a href="https://en.wikipedia.org/wiki/Xenon">Xe</a></li>
+		<li title="Caesium"><a href="https://en.wikipedia.org/wiki/Caesium">Cs</a></li>
+		<li title="Barium"><a href="https://en.wikipedia.org/wiki/Barium">Ba</a></li>
+		<li title="Lanthanum"><a href="https://en.wikipedia.org/wiki/Lanthanum">La</a></li>
+		<li title="Cerium"><a href="https://en.wikipedia.org/wiki/Cerium">Ce</a></li>
+		<li title="Praseodymium"><a href="https://en.wikipedia.org/wiki/Praseodymium">Pr</a></li>
+		<li title="Neodymium"><a href="https://en.wikipedia.org/wiki/Neodymium">Nd</a></li>
+		<li title="Promethium"><a href="https://en.wikipedia.org/wiki/Promethium">Pm</a></li>
+		<li title="Promethium"><a href="https://en.wikipedia.org/wiki/Samarium">Sm</a></li>
+		<li title="Europium"><a href="https://en.wikipedia.org/wiki/Europium">Eu</a></li>
+		<li title="Gadolinium"><a href="https://en.wikipedia.org/wiki/Gadolinium">Gd</a></li>
+		<li title="Terbium"><a href="https://en.wikipedia.org/wiki/Terbium">Tb</a></li>
+		<li title="Dysprosium"><a href="https://en.wikipedia.org/wiki/Dysprosium">Dy</a></li>
+		<li title="Holmium"><a href="https://en.wikipedia.org/wiki/Holmium">Ho</a></li>
+		<li title="Erbium"><a href="https://en.wikipedia.org/wiki/Erbium">Er</a></li>
+		<li title="Thulium"><a href="https://en.wikipedia.org/wiki/Thulium">Tm</a></li>
+		<li title="Ytterbium"><a href="https://en.wikipedia.org/wiki/Ytterbium">Yb</a></li>
+		<li title="Lutetium"><a href="https://en.wikipedia.org/wiki/Lutetium">Lu</a></li>
+		<li title="Hafnium"><a href="https://en.wikipedia.org/wiki/Hafnium">Hf</a></li>
+		<li title="Tantalum"><a href="https://en.wikipedia.org/wiki/Tantalum">Ta</a></li>
+		<li title="Tungsten"><a href="https://en.wikipedia.org/wiki/Tungsten">W</a></li>
+		<li title="Rhenium"><a href="https://en.wikipedia.org/wiki/Rhenium">Re</a></li>
+		<li title="Osmium"><a href="https://en.wikipedia.org/wiki/Osmium">Os</a></li>
+		<li title="Iridium"><a href="https://en.wikipedia.org/wiki/Iridium">Ir</a></li>
+		<li title="Platinum"><a href="https://en.wikipedia.org/wiki/Platinum">Pt</a></li>
+		<li title="Gold"><a href="https://en.wikipedia.org/wiki/Gold">Au</a></li>
+		<li title="Mercury"><a href="https://en.wikipedia.org/wiki/Mercury">Hg</a></li>
+		<li title="Thallium"><a href="https://en.wikipedia.org/wiki/Thallium">Tl</a></li>
+		<li title="Lead"><a href="https://en.wikipedia.org/wiki/Lead">Pb</a></li>
+		<li title="Bismuth"><a href="https://en.wikipedia.org/wiki/Bismuth">Bi</a></li>
+		<li title="Polonium"><a href="https://en.wikipedia.org/wiki/Polonium">Po</a></li>
+		<li title="Astatine"><a href="https://en.wikipedia.org/wiki/Astatine">At</a></li>
+		<li title="Radon"><a href="https://en.wikipedia.org/wiki/Randon">Rn</a></li>
+		<li title="Francium"><a href="https://en.wikipedia.org/wiki/Francium">Fr</a></li>
+		<li title="Radium"><a href="https://en.wikipedia.org/wiki/Radium">Ra</a></li>
+		<li title="Actinium"><a href="https://en.wikipedia.org/wiki/Actinium">Ac</a></li>
+		<li title="Thorium"><a href="https://en.wikipedia.org/wiki/Thorium">Th</a></li>
+		<li title="Protactinium"><a href="https://en.wikipedia.org/wiki/Protactinium">Pa</a></li>
+		<li title="Uranium"><a href="https://en.wikipedia.org/wiki/Uranium#:~:text=Uranium%20is%20a%20chemical%20element,which%206%20are%20valence%20electrons.">U</a></li>
+		<li title="Neptunium"><a href="https://en.wikipedia.org/wiki/Neptunium">Np</a></li>
+		<li title="Plutonium"><a href="https://en.wikipedia.org/wiki/Plutonium">Pu</a></li>
+		<li title="Americium"><a href="https://en.wikipedia.org/wiki/Americium">Am</a></li>
+		<li title="Curium"><a href="https://en.wikipedia.org/wiki/Curium">Cm</a></li>
+		<li title="Berkelium"><a href="https://en.wikipedia.org/wiki/Berkelium">Bk</a></li>
+		<li title="Californium"><a href="https://en.wikipedia.org/wiki/Californium">Cf</a></li>
+		<li title="Einsteinium"><a href="https://en.wikipedia.org/wiki/Einsteinium">Es</a></li>
+		<li title="Fermium"><a href="https://en.wikipedia.org/wiki/Fermium">Fm</a></li>
+		<li title="Mendelevium"><a href="https://en.wikipedia.org/wiki/Mendelevium">Md</a></li>
+		<li title="Nobelium"><a href="https://en.wikipedia.org/wiki/Nobelium">No</a></li>
+		<li title="Lawrencium"><a href="https://en.wikipedia.org/wiki/Lawrencium">Lr</a></li>
+		<li title="Rutherfordium"><a href="https://en.wikipedia.org/wiki/Rutherfordium">Rf</a></li>
+		<li title="Dubnium"><a href="https://en.wikipedia.org/wiki/Dubnium">Db</a></li>
+		<li title="Seaborgium">	<a href="https://en.wikipedia.org/wiki/Seaborgium">Sg</a></li>
+		<li title="Bohrium"><a href="https://en.wikipedia.org/wiki/Bohrium">Bh</a></li>
+		<li title="Hassium"><a href="https://en.wikipedia.org/wiki/Hassium">Hs</a></li>
+		<li title="Meitnerium"><a href="https://en.wikipedia.org/wiki/Meitnerium">Mt</a></li>
+		<li title="Darmstadtium"><a href="https://en.wikipedia.org/wiki/Darmstadtium">Ds</a></li>
+		<li title="Roentgenium"><a href="https://en.wikipedia.org/wiki/Roentgenium">Rg</a></li>
+		<li title="Copernicium"><a href="https://en.wikipedia.org/wiki/Copernicium">Cn</a></li>
+		<li title="Nihonium"><a href="https://en.wikipedia.org/wiki/Nihonium">Nh</a></li>
+		<li title="Flerovium"><a href="https://en.wikipedia.org/wiki/Flerovium">Fl</a></li>
+		<li title="Moscovium"><a href="https://en.wikipedia.org/wiki/Moscovium">Mc</a></li>
+		<li title="Livermorium"><a href="https://en.wikipedia.org/wiki/Livermorium">Lv</a></li>
+		<li title="Tennessine"><a href="https://en.wikipedia.org/wiki/Tennessine">Ts</a></li>
+		<li title="Oganesson"><a href="https://en.wikipedia.org/wiki/Oganesson">Og</a></li>
+	</ol>
+</div>
+<h2>prepared by: Emnet Habtamu<br>
+copy right reserved @ 2022</h2>
+</body>
+</html>
