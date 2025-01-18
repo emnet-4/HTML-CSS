@@ -1,0 +1,33 @@
+.drop{
+  position:absolute;
+  top:0px;
+  width:95%;
+  left:0px;
+  right:0px;
+  font-family:Arial;
+  font-size: 17px;
+  font-weight:bold;	
+  list-style: none;
+  padding: 2;
+  margin: 0 0 20px 0;
+}
+.drop li{text-align:center;}
+
+.dropdown{float:left;
+  width:12.5%;
+  }
+  
+.dropdown a {
+  text-decoration: none;
+}
+.dropdown [data-toggle="dropdown"] {
+  position: relative;
+  bottom:1px;
+  display: block;
+  color: white;
+  background-color:rgba(104,104,104,0.6);
+  padding: 10px;
+}
+.dropdown [data-toggle="dropdown"]:hover {
+  background:rgb(198,181,118);
+  transition:all 0.8s;
